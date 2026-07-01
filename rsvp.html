@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP · Griffin Hall Coffee</title>
+  <meta name="description" content="Reserve your spot at a Griffin Hall Coffee event." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">Griffin Hall</span>
+        <span class="brand-sub">Coffee</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="consulting.html">Consulting</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="rsvp-shell">
+    <div class="wrap">
+      <a class="rsvp-back" href="index.html">&larr; All events</a>
+
+      <!-- Loading -->
+      <p id="rsvp-loading" class="events-status">Loading event…</p>
+
+      <!-- Missing / bad link -->
+      <div id="rsvp-missing" hidden>
+        <h1>Event not found</h1>
+        <p class="hero-sub">That link doesn't point to a current event. Head back to see what's coming up.</p>
+        <a class="btn" href="index.html">See all events</a>
+      </div>
+
+      <!-- Content -->
+      <div id="rsvp-content" class="rsvp-grid" hidden>
+        <div class="rsvp-detail">
+          <span class="event-cat" id="ev-cat" hidden></span>
+          <h1 id="ev-name">Event</h1>
+          <div class="event-meta" id="ev-meta"></div>
+          <p class="event-blurb" id="ev-blurb" hidden></p>
+
+          <div class="spots rsvp-spots" id="ev-spots" hidden>
+            <div class="spots-bar"><div class="spots-fill" id="ev-spots-fill"></div></div>
+            <div class="spots-label" id="ev-spots-label"></div>
+            <p class="spots-hint" id="ev-spots-hint"></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-card">
+            <form id="rsvp-form" novalidate>
+              <h2>Save your spot</h2>
+              <p class="form-lead">Just the essentials — we'll email you the details.</p>
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input type="text" id="f-name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" autocomplete="email" placeholder="you@email.com" required />
+              </div>
+              <div class="field">
+                <label for="f-location">Location</label>
+                <input type="text" id="f-location" autocomplete="address-level2" placeholder="City / neighborhood" required />
+              </div>
+              <button type="submit" class="btn rsvp-submit" id="rsvp-submit">RSVP &rarr;</button>
+              <p class="form-status" id="form-status"></p>
+            </form>
+
+            <!-- Optional Venmo prepay -->
+            <div class="venmo-prepay" id="venmo-prepay" hidden>
+              <a class="btn btn--venmo" id="venmo-btn" href="#" target="_blank" rel="noopener">Pay ahead via Venmo</a>
+              <p>Totally optional — you can also pay cash or Venmo on the day.</p>
+            </div>
+          </div>
+
+          <!-- Thank you -->
+          <div class="form-card rsvp-thanks" id="rsvp-thanks" hidden>
+            <div class="check">&#10003;</div>
+            <h2>You're in.</h2>
+            <p>We've got your spot saved and we'll be in touch with the details. See you there.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">Griffin Hall Coffee</div>
+      <nav class="footer-social" id="footer-social"></nav>
+      <div class="footer-copy">&copy; <span id="year"></span> Griffin Hall Coffee</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/rsvp.js"></script>
+</body>
+</html>

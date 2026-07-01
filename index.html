@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Griffin Hall Coffee — Events</title>
+  <meta name="description" content="A different kind of coffee event. Cupping, brewing guidance, and honest industry perspective. RSVP in three clicks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">Griffin Hall</span>
+        <span class="brand-sub">Coffee</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Events</a>
+        <a href="photos.html">Photos</a>
+        <a href="consulting.html">Consulting</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <span class="eyebrow">Griffin Hall Coffee</span>
+        <h1>A different kind of <em>event.</em></h1>
+        <p class="hero-sub">Sober, slow, and intentional gatherings around the cup — for people who want to taste more, learn something real, and actually connect.</p>
+        <div class="hero-words">
+          <span>Grounding</span><span>ritual</span><span>connection</span><span>the macro</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What's coming up</span>
+          <h2>Upcoming events</h2>
+          <p>Pick a date, drop your details, and you're in — three clicks, no fuss. New sessions are added often.</p>
+        </div>
+        <div class="events-grid" id="events-grid"></div>
+        <p class="events-status" id="events-status" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">Griffin Hall Coffee</div>
+      <nav class="footer-social" id="footer-social"></nav>
+      <div class="footer-copy">&copy; <span id="year"></span> Griffin Hall Coffee</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/events.js"></script>
+</body>
+</html>
