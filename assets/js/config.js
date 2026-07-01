@@ -8,7 +8,7 @@
 window.GHC_CONFIG = {
   // Paste your deployed Apps Script Web App URL here (ends in /exec).
   // Leave blank to preview with the demo events below.
-  APPS_SCRIPT_URL: '',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbznb5oVvlSW3yTodQKtW3XGEd9lgE1vDIo71pCwo_empCmokXDkhxCjBEsNmD3z4fmf/exec',
 
   // Venmo username people can pay ahead with (optional — cash/Venmo also fine day-of).
   VENMO_HANDLE: 'griffinhallcoffee',

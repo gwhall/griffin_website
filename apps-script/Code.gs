@@ -123,7 +123,7 @@ function getAllEvents_() {
       name: name,
       dateObj: dateObj,
       dateDisplay: dateObj ? Utilities.formatDate(dateObj, tz_(), 'EEE, MMM d') : String(dateVal || '').trim(),
-      time: ci.time > -1 ? String(row[ci.time]).trim() : '',
+      time: ci.time > -1 ? formatTime_(row[ci.time]) : '',
       location: ci.location > -1 ? String(row[ci.location]).trim() : '',
       category: ci.category > -1 ? String(row[ci.category]).trim() : '',
       blurb: ci.blurb > -1 ? String(row[ci.blurb]).trim() : '',
@@ -202,6 +202,15 @@ function countRsvps_(ev) {
 function tz_() { return SpreadsheetApp.getActive().getSpreadsheetTimeZone() || 'America/Los_Angeles'; }
 
 function trim_(s) { return String(s == null ? '' : s).trim(); }
+
+// A Time-formatted cell comes back as a Date (epoch 1899); format it as "10:00 AM".
+// Plain text (e.g. "10:00 AM") passes through untouched.
+function formatTime_(v) {
+  if (v instanceof Date && !isNaN(v.getTime())) {
+    return Utilities.formatDate(v, tz_(), 'h:mm a');
+  }
+  return String(v == null ? '' : v).trim();
+}
 
 function parseDate_(v) {
   if (v instanceof Date && !isNaN(v.getTime())) return v;
